@@ -1,17 +1,12 @@
 import express from "express";
+import { login, logout, singin } from "../controllers/auth.controller.js";
 
 const route = express();
 
-route.get("/singin", (req, res) => {
-  res.send("this is singin page!");
-});
+route.get("/singin", singin);
 
-route.get("/login", (req, res) => {
-  res.send("this is login page!");
-});
+route.get("/login", login);
 
-route.get("/logout", (req, res) => {
-  res.send("log out");
-});
+route.get("/logout", logout);
 
 export default route;
