@@ -1,9 +1,9 @@
 import express from "express";
-import { login, logout, singin } from "../controllers/auth.controller.js";
+import { login, logout, singup } from "../controllers/auth.controller.js";
 
 const route = express();
 
-route.get("/singin", singin);
+route.post("/singup", singup);
 
 route.get("/login", login);
 
