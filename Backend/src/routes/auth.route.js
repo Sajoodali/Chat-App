@@ -5,8 +5,8 @@ const route = express();
 
 route.post("/singup", singup);
 
-route.get("/login", login);
+route.post("/login", login);
 
-route.get("/logout", logout);
+route.post("/logout", logout);
 
 export default route;
