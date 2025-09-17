@@ -84,4 +84,29 @@ export const logout = (req, res) => {
   }
 };
 
-export const updateProfile = async (req, res) => {}
+export const updateProfile = async (req, res) => {
+  const { fullName, profilePic } = req.body;
+  try {
+    if (!fullName) {
+      return res.status(400).json({ message: "Full name is required." });
+    }
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+    user.fullName = fullName;
+    if (profilePic) user.profilePic = profilePic;
+
+    await user.save();
+    res.status(200).json({
+      _id: user._id,
+      fullName: user.fullName,  
+      email: user.email,
+      profilePic: user.profilePic,
+    });
+  } catch (error) {
+    console.error("Error in updateProfile controllers", error.message);
+    res.status(500).json({ message: "Internal server Error." });
+  }
+};
+
