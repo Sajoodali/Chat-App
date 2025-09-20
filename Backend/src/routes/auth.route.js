@@ -2,7 +2,7 @@ import express from "express";
 import { login, logout, singup, updateProfile, checkAuth} from "../controllers/auth.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
 
-const route = express();
+const route = express.Router();
 
 route.post("/singup", singup);
 route.post("/login", login);
