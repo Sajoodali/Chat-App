@@ -7,7 +7,7 @@ import { connectdb } from "./lib/db.js";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 
-dotenv.config();
+dotenv.config({path: './env'});
 
 const app = express();
 const port = process.env.PORT || 3000;
