@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HomePage from "./Pages/HomePage";
 import SignUpPage from "./Pages/SignUpPage";
 import LoginPage from "./Pages/LoginPage";
 import SettingPage from "./Pages/SettingPage";
 import ProfilePage from "./Pages/ProfilePage";
-import { useAuthStore } from "./store/useAuthStore.js";
+import { useAuthStore } from "./store/useAuthStore";
 
 import { Route, Routes } from "react-router-dom";
 
