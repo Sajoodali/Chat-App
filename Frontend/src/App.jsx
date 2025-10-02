@@ -5,11 +5,21 @@ import SignUpPage from "./Pages/SignUpPage";
 import LoginPage from "./Pages/LoginPage";
 import SettingPage from "./Pages/SettingPage";
 import ProfilePage from "./Pages/ProfilePage";
+import { useAuthStore } from "./store/useAuthStore.js";
 
 import { Route, Routes } from "react-router-dom";
 
-
 function App() {
+  const { authUser, checkAuth } = useAuthStore();
+
+  
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  console.log({authUser});
+  
+
   return (
     <>
       <Navbar />
