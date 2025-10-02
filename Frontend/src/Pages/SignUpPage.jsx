@@ -1,9 +1,25 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
+import useAuthStore from "../store/useAuthStore";
 
 const SignUpPage = () => {
-  return (
-    <div>SignUpPage</div>
-  )
-}
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-export default SignUpPage
+  const { signup, isSigningup } = useAuthStore();
+
+  const validateForm = () => {};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return <div>SignUpPage</div>;
+};
+
+export default SignUpPage;
