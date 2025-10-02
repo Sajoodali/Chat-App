@@ -22,12 +22,15 @@ export const useAuthStore = create((set) => ({
   },
 
   signup: async (data) => {
-    // try {
-    //   const res = await axiosInstance.post("/auth/signup", data);
-    //   set({ authUser: res.data });
-    // } catch (error) {
-    //   console.error("Error signing up:", error);
-    //   set({ authUser: null });
-    // }
+    set({ isSigningUp: true });   // 👈 loading start
+    try {
+      const res = await axiosInstance.post("/auth/signup", data);
+      set({ authUser: res.data, isSignedIn: true });
+    } catch (error) {
+      console.error("Error signing up:", error);
+      set({ authUser: null });
+    } finally {
+      set({ isSigningUp: false });   // 👈 loading end
+    }
   },
 }));
