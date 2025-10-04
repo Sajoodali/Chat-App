@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {useAuthStore} from "../store/useAuthStore";
+import { useAuthStore } from "../store/useAuthStore";
 import {
   Eye,
   EyeOff,
@@ -58,12 +58,10 @@ const SignUpPage = () => {
                   <span className="label-text font-medium">Full Name</span>
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <User className="m-9 h-9 text-base-content/40" />
-                  </div>
+                  
                   <input
                     type="text"
-                    className={`input input-bordered w-full pl-10`}
+                    className="input input-bordered w-full pl-3"
                     placeholder="John Doe"
                     value={formData.fullName}
                     onChange={(e) =>
@@ -78,12 +76,10 @@ const SignUpPage = () => {
                   <span className="label-text font-medium">Email</span>
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Mail className="w-5 h-5 text-base-content/40" />
-                  </div>
+                  
                   <input
                     type="email"
-                    className={`input input-bordered w-full pl-10`}
+                    className="input input-bordered w-full pl-3"
                     placeholder="you@example.com"
                     value={formData.email}
                     onChange={(e) =>
@@ -98,12 +94,10 @@ const SignUpPage = () => {
                   <span className="label-text font-medium">Password</span>
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Lock className="m-5 h-5 text-base-content/40" />
-                  </div>
+                  
                   <input
                     type={showPassword ? "text" : "password"}
-                    className={`input input-bordered w-full pl-10`}
+                    className={`input input-bordered w-full pl-3`}
                     placeholder="••••••••"
                     value={formData.password}
                     onChange={(e) =>
